@@ -1,9 +1,9 @@
 from flask import Flask, render_template, request
 import json
-from data_model import DB, User, Tweet
+from .data_model import DB, User, Tweet
 from twitter import upsert_user
 from os import path
-from ml import predict_most_likely_author
+from .ml import predict_most_likely_author
 
 
 def create_app():
@@ -20,7 +20,7 @@ def create_app():
             #DB.create_all()
             #DB.session.commit()
             pass
-        with open('templates/landing.json') as f:
+        with open('lambda331/landing.json') as f:
             args = json.load(f)
         return render_template('base.html', **args)
 
