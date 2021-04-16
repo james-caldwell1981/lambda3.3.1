@@ -9,7 +9,7 @@ $('#tweet_submit').click(function () {
         url: '/predict_author?tweet_to_classify=' + $('#tweet_text_input').val(),
         type: 'GET',
         success: function(response){
-            $.('#classify_response').innerText response
+            $.('#classify_response').innerText = response
         }
     });
 });
