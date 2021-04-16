@@ -3,7 +3,7 @@ from flask import Flask, render_template, request
 import json
 from twitter import upsert_user
 from data_model import DB, User, Tweet
-from .ml import predict_most_likely_author
+from ml import predict_most_likely_author
 
 
 def create_app():
